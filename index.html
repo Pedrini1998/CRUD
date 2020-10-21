@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <title>Registro Alumnos</title>
+
+    <!-- Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Agregar Alumnos!</h1>
+      <input type="text" id="matricula" placeholder="Matricula" class="form-control my-3">
+      <input type="text" id="nombre" placeholder="Nombre" class="form-control my-3">
+      <input type="text" id="edad" placeholder="Edad" class="form-control my-3">
+      <select name="select"  id="select" class="form-control my-3">
+              <option value="Hombre" selected="">Hombre</option> 
+              <option value="Mujer" >Mujer</option>
+      </select>
+      <input type="text" id="promedio" placeholder="Promedio" class="form-control my-3">
+      <button class="btn btn-info" id="boton" onclick="guardar()">Guardar</button>
+
+      <table class="table my-1" aling="left">
+          <tr>
+            <td>
+              <!-- Tabla de Hombres-->
+              <table>
+                <thead>
+                  <tr>
+                    <tr><th colspan="4">Tabla  Hombres</th></tr>
+                    <th scope="col">Matricula</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Promedio</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
+                  </tr>
+                </thead>
+                <tbody id="tablaHombres">
+                </tbody>
+              </table>
+            </td>
+            <!-- Tabla de Mujeres-->
+            <td>
+              <table>
+                <thead>
+                  <tr>
+                    <tr><th colspan="4">Tabla  Mujeres</th></tr>
+                    <th scope="col">Matricula</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Promedio</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
+                  </tr>
+                </thead>
+                <tbody id="tablaMujeres">
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="4">Total de Alumnos: <input type="text" id="total" disabled="true"> Promedio Total: <input type="text" id="promedioTotal" disabled="true">  </td>
+          </tr>
+        </table>
+    </div>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="funciones.js"></script>
+  </body>
+</html>
